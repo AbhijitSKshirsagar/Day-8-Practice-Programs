@@ -8,26 +8,27 @@ public class Line_Comparision {
 		double length = Math.sqrt(((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1)));
 		return length;
 	}
-	// it will check for equality of two lines 
+	/*it will check for equality of two lines*/
 	@SuppressWarnings("removal")
 	private static int lengthEquality(double length, double length1) {
 		int flag;
 		Double len = new Double(length);
 		Double len1 = new Double(length1);
-		flag = len.compareTo(len1);
+		flag =  len.compareTo(len1);
 		return flag;
 	}
-
 	private static void output(int flag) {
-		if (flag == 0) {
+		if (flag == 0 ) {
 			System.out.println("Both the line are equal in size");
-		} else if (flag > 0) {
+		}
+		else if(flag > 0 ){
 			System.out.println("First line is bigger in size");
-		} else {
+		}
+		else {
 			System.out.println("Second line is bigger in size");
 		}
 	}
-
+	
 	public static void main(String[] args) {
 		System.out.println("Welcome to line comparision computation prblm");
 		Scanner scanner = new Scanner(System.in);
@@ -43,10 +44,10 @@ public class Line_Comparision {
 		double a2 = scanner.nextDouble();
 		double b2 = scanner.nextDouble();
 		double length1 = lengthCalc(a1, b1, a2, b2);
-		/*
-		 * if flag greater than 0 than length is bigger if flag less than 0 than length1
-		 * is bigger if equals 0 than both are equal
-		 */
+		/*if flag greater than 0 than length is bigger
+		 * if flag less than 0 than length1 is bigger
+		 * if equals 0 than both are equal
+		 * */
 		int flag = lengthEquality(length, length1);
 		output(flag);
 		scanner.close();
